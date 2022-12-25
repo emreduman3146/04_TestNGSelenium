@@ -1,0 +1,8 @@
+
+<suite name="Suite01"><!--  @BeforeSuite methodunun calisma leveli burasidir-->
+    <test name="Test"><!-- @BeforeTest methodunun calisma leveli burasidir-->
+        <classes>
+            <class name="com.testng.annotations.a_basicAnnotations.Test01" /><!--@BeforeClass methodunun calisma leveli -->
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,7 @@
+<suite name="My Test Suite">
+    <test name="My Test Case">
+        <packages>
+            <package name="com.testng.annotations.a_basicAnnotations" />
+        </packages>
+    </test>
+</suite>

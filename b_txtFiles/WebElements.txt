@@ -1,0 +1,8 @@
+BU TXT FILE'DA TEST STEPLERI ICERISINDE KULLANABILECEK WEB ELEMENTLER TUTULUR
+FORMAT: ELEMENTIN ADI = LOCATOR TIPI -> LOCATOR
+-----------------------------------------------------------------------------
+
+
+stayInTheKnowPopUpClose_button -> xpath -> //button[@class='browsepopup-closebtn']
+searchBar_textBox -> name -> SearchBoxKeywords
+ilkUrun -> xpath -> (//a[@class='product-list__product-title'])[1]

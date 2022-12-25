@@ -1,0 +1,158 @@
+ // maven markette selenium %50 ise selenium'un da %50'si java
+    //java - selenium - intellij - JUnit/testNG -
+    //C# -SELENIUM - VISUAL STUDIO- NUnit - xxxx %5
+    //python -selenium- pycharm/VSC - pytest  - panda %25
+    //js - selenium - vsc - jasmine/mocha/espresso  - node.js/npm %20
+
+
+//java calisma konusu
+javadaki 4 farkli memory/hafiza /depo seklidir
+heap bellek
+stack bellek
+string pool
+static bellek
+
+//haftalik ders calisma duzeni
+//pazartesi , cumartesiyi tektrar et
+//sali pazari tekrar et
+//carsamba odev 1.kayiti calis
+//persembe odev 2. kayiti calis
+//cuma serbest calisma
+
+
+//mvn test commands
+
+1->mvn clean test->
+        clean-> daha onceki turuncu target doyasini sil
+        pom.xmldeki surefire plugine gore testleri kosar
+
+        not:
+        By default, the Surefire Plugin will automatically include all test classes with the following wildcard patterns:
+        "**/Test*.java" - includes all of its subdirectories and all Java filenames that start with "Test".
+        "**/*Test.java" - includes all of its subdirectories and all Java filenames that end with "Test".
+        "**/*Tests.java" - includes all of its subdirectories and all Java filenames that end with "Tests".
+        "**/*TestCase.java" - includes all of its subdirectories and all Java filenames that end with "TestCase".
+
+
+
+
+2->mvn clean surefire-report:report
+    clean-> daha onceki turuncu target doyasini sil
+    surefire pluginin icindeki configuration'a gore run eder
+    hem de report olusturur. -> target>site>xxx.html
+
+
+3->mvn clean -Dtest=a_CalculatorTest test
+ ->mvn clean -Dtest=a_CalculatorTest,b_EmployeeTest test
+    daha onceki turuncu target doyasini sil
+    surefire pluginin icindeki ayarlari cigner,yok sayar ve bu komuttaki emiri yapar
+    -D parametre demektir
+    parametermiz bir tane class adidir
+    sadece ve sadece bu classin icindeki testler run edilir
+    birden fazla classs ismi yazilabilir
+
+
+4->mvn clean surefire-report:report -Dtest=a_CalculatorTest test
+    daha onceki turuncu target doyasini sil
+    surefire pluginin icindeki ayarlari ez
+     ama surefire pluginin html report olusturma ozelligini kullan
+     parameter olarak verdigim classi test et
+
+5->mvn clean surefire-report:report -Dtest=*Test* test
+   mvn clean surefire-report:report -Dtest=* test
+   Yukardaki command ile ayni mantiktir
+   sadece parametre olarak verilen deger daha fazla classi kapsar
+
+6->mvn -Dtest=a_CalculatorTest#add_positiveScenarioTest test
+    pom.xmldeki surefire pluginini ez
+    parametre olarak verilen classin icindeki @Test methodunu run et
+
+
+7->mvn clean surefire-report:report -Dtest=a_CalculatorTest#add_positiveScenarioTest test
+        daha onceki turuncu target doyasini sil
+        surefire pluginin icindeki ayarlari ez
+        ama surefire pluginin html report olusturma ozelligini kullan
+        parameter olarak verdigim classin icindeki methodu test et
+
+8->mvn clean surefire-report:report -Dtest=a_CalculatorTest#add_* test
+    7. commandin aynisidir
+    sadece parametre farkli
+
+9->mvn clean surefire-report:report -Dtest=a_CalculatorTest#add_positiveScenarioTest+add_negativeScenarioTest test
+   7. ve 8. commandlerden farki yoktur
+   + kullanarak istedigimiz kadar method adi ekleyebilriz
+
+
+
+10->mvn -Dsurefire.rerunFailingTestsCount=2 test
+    bu command ile surefire'daki testleri run ederiz
+    olur da fail alirsak tekrar tekrar run etmeye devam etsin
+    tekrarin bir uplimitini koyadabiliyoruz
+    biz 3 demisiz
+    Eger fail olmazsa her sey pass olursa 1 kez calisir ve durur
+
+11->mvn clean surefire-report:report -Dsurefire.rerunFailingTestsCount=2 test
+     daha onceki turuncu target doyasini sil
+    surefire pluginin icindeki ayarlara gore testleri calistir
+    surefire pluginin html report olusturma ozelligini kullan
+    maven test fail olursa 2, kez bir daha run et
+
+
+11.5->mvn clean surefire-report:report  -Dsurefire.rerunFailingTestsCount=2 -Dtest=e1*#testDigitIfItIsEven_viaParameterizedTest
+11.5->mvn clean surefire-report:report  -Dsurefire.rerunFailingTestsCount=2 -Dtest=e1*#testDigitIfItIsEven*
+11.5->mvn clean surefire-report:report  -Dsurefire.rerunFailingTestsCount=2 -Dtest=e1*#testDigitIfItIsEven* -Dgroup=isEven_Int
+11.5->mvn clean surefire-report:report  -Dsurefire.rerunFailingTestsCount=2 -Dtest=e1* -Dgroup=isEven_Int
+
+
+
+12->mvn install -DskipTests
+   pom.xml'de testleri skip etmek icin kod yazmak istemiyoruz
+   sadece run ederken anlik parametre vermek istiyoruz
+   MVN
+   biz mvn install commandini ogrenmistik
+   odev2'yi yaparken bu commandi kullandik
+   mvn install= projenin mavi java ve yesil java folderlarindaki kodlari compile et
+                jarini cikar
+                .m2 reposuna bu projeyi dependecy olarak ekle demektir.
+  Bu islemleri yaparken testlerin ignored/skipped edilmesini istiyorsak
+  12. commandi yazariz
+
+
+13->mvn install -Dmaven.test.skip=true
+  12. command ile ayni isi yapmaktadir
+
+
+14-> mvn clean test allure:report
+        allure report olusturmak icin kullanilir
+
+15->mvn allure:serve
+   14.command calistirildiktan sonra olusan allure reportu browserda acmak icin bu command yazilir
+
+
+
+NOT-> ALLURE REPORT TAMAMEN BAGIMSIZ BIR OZELLIKTIR
+      Selenium ya da junit ile hic bir alaksi yoktur.
+      bagimsiz bir kutuphanedir, tamamen daha guzel raporlar olusturabilmemizi saglar
+      Allure report testNG ile de calisir
+      Cucumber ile de calisir
+      Appium ile de calisir
+
+
+
+
+
+
+16->mvn -Dgroups="tagName1, tagName2,..."
+    terminalde mvn ile @Testleri run ederken @Taglerine gore run etmek icin bu commandi kullan
+
+17-> mvn -DexcludedGroups="tagName1, tagName2,..."
+    Run etmek istemdigin @Testleri @Taglerini kullanrak devredisi birakma
+
+18->mvn -Dgroups="tagName1 | tagName2"
+     bu verilen 2 tagten herhangi birini iceren classi/methodu run et
+
+19->mvn -Dgroups="tagName1 & tagName2"
+     bu verilen 2 tagten ikisini de iceren classi/methodu run et
+
+
+

@@ -1,0 +1,10 @@
+Verbose level 1: Only the test results and any failures are output.
+Verbose level 2: In addition to the output at verbose level 1, the configuration methods being run are output.
+Verbose level 3: In addition to the output at verbose level 2, the test methods being invoked are output.
+Verbose level 4: In addition to the output at verbose level 3, the test dependencies are output.
+Verbose level 5: In addition to the output at verbose level 4, the test groups are output.
+Verbose level 6: In addition to the output at verbose level 5, the test methods being skipped are output.
+Verbose level 7: In addition to the output at verbose level 6, the test configuration failures are output.
+Verbose level 8: In addition to the output at verbose level 7, the test method invocation numbers are output.
+Verbose level 9: In addition to the output at verbose level 8, the test reporter output is output.
+Verbose level 10: In addition to the output at verbose level 9, the test instance numbers are output.

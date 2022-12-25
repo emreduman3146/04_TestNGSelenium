@@ -1,0 +1,11 @@
+<suite name="My Test Suite02">
+    <test name="My Test Case02">
+        <classes>
+            <class name="com.testng.annotations.a_basicAnnotations.Test01">
+                <methods>
+                    <include name="test01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

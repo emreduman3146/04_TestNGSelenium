@@ -1,0 +1,8 @@
+BU TXT FILE'DA TEST STEPLERI ICERISINDE KULLANABILECEK TESTDATALAR TUTULUR
+BU TEST DATALAR ASSERTION ESNASINDA KULLANILABILIR
+YA DA SELENIUM'DA HERHANGI BIR ACTION YAPARKEN DE KULLANILABILIR
+----------------------------------------------------------------------------
+
+homePageTitle = Canada's Biggest Bookstore:
+aratilanKitap = The Analyst by John Katzenbach
+kitapIsmi=THE ANALYST: A NOVEL

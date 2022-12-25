@@ -1,0 +1,5 @@
+BU TXT FILE'DA TEST STEPLERI ICERISINDE KULLANABILECEK SABITLER TUTULUR
+------------------------------------------------------------------------
+
+URL = https://www.chapters.indigo.ca/en-ca/
+DURATION = 10

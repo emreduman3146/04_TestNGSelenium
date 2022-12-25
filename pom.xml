@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>TestNGFramework</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+
+
+
+
+    <dependencies>
+
+
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <!-- tum cesit broswerlarin driver.exe filelarini icerir, artik tek tek .exe file indirmek zorunda degiliz-->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.2.1</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <!-- //https://mvnrepository.com/ git ve selenium java ara-->
+        <!-- selenium'un resmi sitesinden indirdigimiz tum jar filelarini icerir -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.6.0</version>
+            <!--  .m2 ye kaydoldu-->
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.7.0</version>
+            <scope>test</scope>
+        </dependency>
+
+
+    </dependencies>
+
+
+
+    <!-- JUnit kodlarini Intellij yesil oka basinca Run ediyor. Kodlari duz bir sekilde execute ediyor
+     Maven'in kodlarimizi compile etmesini ardindan da projectimzi build etmesini istersek
+     asagidaki ifadeleri yazmaliyiz-->
+
+    <build><!-- projemizi build ederken ihtiyac duydugumuz pluginleri koydugumuz yerdir-->
+        <plugins>
+
+            <!-- JUNIT testlerini surefire plugin sayesinde maven ile run ederiz
+            olusan surefire html report "/target/surefire-reports/" pathine olusur.-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M7</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/testng_testSuite_runPackage.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+
+            </plugin>
+
+        </plugins>
+    </build>
+
+
+
+
+
+
+
+
+
+
+    <!-- mvn build tool araciligi ile run ettignimiz testlerin html reportunu almamizi saglar-->
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>3.0.0-M7</version>
+                <configuration>
+                    <!-- <showSuccess>false</showSuccess> false: sadece fail olan testleri goster -->
+                    <showSuccess>true</showSuccess><!--true: pass/fail olan testleri goster -->
+
+                    <outputName>JUnit-Examples-Test-Report</outputName><!-- html reportun basligi -->
+
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </reporting>
+
+
+
+</project>

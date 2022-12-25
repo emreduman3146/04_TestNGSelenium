@@ -1,0 +1,17 @@
+
+
+
+<suite name="My Test Suite" >
+
+    <test name="My Test Case 1">
+        <classes>
+            <class name="com.testng.annotations.a_basicAnnotations.Test01"/>
+        </classes>
+    </test>
+
+    <test name="My Test Case 2">
+        <classes>
+            <class name="com.testng.annotations.a_basicAnnotations.Test02"/>
+        </classes>
+    </test>
+</suite>

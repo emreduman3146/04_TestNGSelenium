@@ -68,9 +68,41 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M7</version>
                 <configuration>
+
+                    <!--
+                           <test>com.testng.annotations.b_annotations.a_*</test>
+                    -->
+
+
+
+                    <!--
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                    -->
+
+
+
+                    <!--
+                     <excludes>
+                        <exclude>
+                            **/*Test.java
+                        </exclude>
+                    </excludes>
+                    -->
+
+
+
+
+                    <!--
+
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testng_testSuite_runPackage.xml</suiteXmlFile>
+                        <suiteXmlFile>testng_testSuite_runClasses.xml</suiteXmlFile>
                     </suiteXmlFiles>
+
+                    -->
+
+
                 </configuration>
 
             </plugin>

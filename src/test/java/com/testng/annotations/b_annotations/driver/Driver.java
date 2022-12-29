@@ -7,7 +7,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class Driver {
 
 
-   static private WebDriver driver;
+    //Sadece tanimdir, declaration
+   static private WebDriver driver;//null
    static private Driver myObje;
 
     private Driver()
@@ -17,6 +18,7 @@ public class Driver {
         driver= WebDriverManager.chromedriver().avoidShutdownHook().capabilities(options).create();
     }
 
+    //static import ile mu method import edilip kolayca kullanilabilsin diye
     static public WebDriver getDriver()
     {
         if(driver==null)

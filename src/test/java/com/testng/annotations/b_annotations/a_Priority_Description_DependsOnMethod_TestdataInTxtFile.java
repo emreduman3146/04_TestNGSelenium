@@ -1,5 +1,7 @@
 package com.testng.annotations.b_annotations;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -18,6 +20,11 @@ import static com.testng.annotations.b_annotations.txtFiledanVeriOkuma.TxtOkuma.
 //JAVA +SELENIUM +TESTNG+INTELLIJ+MAVEN ILE AUTOMATION TESTING YAPIYORUZ
 public class a_Priority_Description_DependsOnMethod_TestdataInTxtFile
 {
+    //TEST CASE01
+        //TEST STEP1 Indigoya git
+        //TEST STEP2 arama motoruna The Analyst by John Katzenbach (kitap ve yazarin adini) gir
+        //TEST STEP3 ilk sirada THE ANALYST: A NOVEL kitap ismi olmali
+
     private static WebDriver driver;
     SoftAssert sa;
 
@@ -29,7 +36,8 @@ public class a_Priority_Description_DependsOnMethod_TestdataInTxtFile
     }
 
 
-    @Test(priority = 1, description = "Indigo Sitesine Git")
+    @Test( priority =1,
+            description = "Indigo Sitesine Git")
     public void launchChromeBrowser_and_navigateToTheUrl()
     {
         try
@@ -37,7 +45,7 @@ public class a_Priority_Description_DependsOnMethod_TestdataInTxtFile
             System.out.println("STEP1-launchChromeBrowser_and_navigateToTheUrl step Initialized");
 
             String value=getValueFromTxtFile("Constants","URL");
-            getDriver().get(value);
+            getDriver().get(value);//value:URL adresi
 
             //SOFT ASSERT-> VERIFICATION YAPILIYOR
             sa.assertTrue(getDriver().getTitle().startsWith(getValueFromTxtFile("TestData","homePageTitle")));
@@ -57,9 +65,9 @@ public class a_Priority_Description_DependsOnMethod_TestdataInTxtFile
     }
 
 
-    @Test(  priority = 2,
-            dependsOnMethods = "launchChromeBrowser_and_navigateToTheUrl",
-            description = "Arama motoruna kitap ismi girilip enter'a basiliyor")
+    @Test( priority = 2,
+            //dependsOnMethods = "launchChromeBrowser_and_navigateToTheUrl",
+            description = "Arama motoruna kitap ismi girilip enter'a basiliyor ve ardindan kitap ismi verify ediliyor")
     public void searchForTheBook_inIndigo() {
         try
         {
@@ -67,16 +75,21 @@ public class a_Priority_Description_DependsOnMethod_TestdataInTxtFile
             System.out.println("STEP2-searchForTheBook_inIndigo Initialized");
 
             //WAIT FOR POPUP, IMPLICITLY
+            //JAVA BILGISI STRING->INTEGER CASTING
             getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(getValueFromTxtFile("Constants","DURATION"))));
 
             //POPUP KAPATILDI
+            //getDriver().findElement(By.xpath("......")).click();
+
             getWebElement("stayInTheKnowPopUpClose_button").click();
 
             //KITABIN ISMINI GIR
+
             getWebElement("searchBar_textBox").sendKeys(getValueFromTxtFile("TestData","aratilanKitap"));
 
-            //ENTER TUSUNA BAS
+            //ENTER TUSUNA BAS - getDriver().sendKeys(Keys.ENTER);
             Robot robot = new Robot();
+
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
 

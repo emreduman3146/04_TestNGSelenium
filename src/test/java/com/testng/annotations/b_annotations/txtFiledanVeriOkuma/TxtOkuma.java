@@ -14,7 +14,7 @@ public class TxtOkuma
 {
 
     private static String currentDirectory = System.getProperty("user.dir");
-    //C:\Users\Emre Duman\IdeaProjects\FullStack_WebAutomation_TestingBootcamp\TestNGFramework>
+    //C:\Users\Emre Duman\IdeaProjects\FullStack_WebAutomation_TestingBootcamp\TestNGFramework
 
 
     private static String txtFilePath;
@@ -24,7 +24,7 @@ public class TxtOkuma
         boolean testdataIsmiMevcut =false;
         boolean sabitDegerIsmiMevcut =false;
 
-        txtFilePath=currentDirectory+"\\b_txtFiles\\"+fileName+".txt";
+        txtFilePath=currentDirectory+"\\b_txtFiles\\"+fileName+".txt";//dynamic coding
 
 
         String dataName;
@@ -35,9 +35,9 @@ public class TxtOkuma
             File myObj = new File(txtFilePath);
             Scanner myReader = new Scanner(myObj);
 
-            while (myReader.hasNextLine())
+            while (myReader.hasNextLine())//pathini bulundurdugum file'in icindeki satirda bir deger var mi?
             {
-                //tum satiri getir
+                //siradaki tum satiri getir
                 String data = myReader.nextLine();
 
                 //eger satir '=' char'ini icermiyorsa bu while lopp'un bu donguunu atla/es gec
@@ -47,6 +47,7 @@ public class TxtOkuma
                 //satirdaki ifadeyi '=' isaretinden 2'ye bol ve Array'in icine depola
                 String [] dataName_dataValue=data.split("=");
 
+                //JAVA BILGISI STRING CLASSI METHODLARI
                 dataName=dataName_dataValue[0].trim();
                 dataValue=dataName_dataValue[1].trim();
 
@@ -54,12 +55,12 @@ public class TxtOkuma
                 {
                     testdataIsmiMevcut=true;
                     sabitDegerIsmiMevcut=true;
-                    break;
+                    break;//WHILE LOOPTAN CIKILACAK
                 }
 
             }
 
-            myReader.close();
+            myReader.close();//ICERISINDE While loop ile gezdigimiz txt file'dan cikis yapildi
 
             //aranan data bulunamadiysa hata firlat
             if(!testdataIsmiMevcut)
@@ -88,7 +89,7 @@ public class TxtOkuma
         String locator = null;
         boolean elementIsmiMevcut=false;
 
-        txtFilePath=currentDirectory+"\\b_txtFiles\\"+"WebElements.txt";
+        txtFilePath=currentDirectory+"\\b_txtFiles\\"+"WebElements.txt";//hardcoding terminology
 
 
         try
@@ -104,7 +105,7 @@ public class TxtOkuma
                 if(!data.contains("->"))
                     continue;
 
-                //satirdaki ifadeyi '=' isaretinden 2'ye bol ve Array'in icine depola
+                //satirdaki ifadeyi '->' isaretinden 3'e bol ve Array'in icine depola
                 String[] webElementName_type_Locator = data.split("->");
 
                 //webElementName basindaki ve sonundaki bosluklari sil
@@ -132,6 +133,7 @@ public class TxtOkuma
             System.out.println("WebElementlerin saklandigi dosya bulunamadi!");
             e.printStackTrace();
         }
+
 
         //Elimizdeki locatorTipi ve locator ile webElement olusturmaya geldi sira
         WebElement element=generateWebElement(locatorType,locator);

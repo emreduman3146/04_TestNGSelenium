@@ -2,7 +2,8 @@ package com.testng.annotations.a_basicAnnotations;
 
 import org.testng.annotations.*;
 
-public class Test02
+public class IkinciTest
+
 {
 
     @BeforeTest

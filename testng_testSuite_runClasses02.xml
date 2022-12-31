@@ -11,7 +11,7 @@
 
     <test name="My Test Case 2">
         <classes>
-            <class name="com.testng.annotations.a_basicAnnotations.Test02"/>
+            <class name="com.testng.annotations.a_basicAnnotations.IkinciTest"/>
         </classes>
     </test>
 </suite>

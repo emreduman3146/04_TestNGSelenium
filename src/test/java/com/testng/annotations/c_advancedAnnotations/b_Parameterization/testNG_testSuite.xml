@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="ParameterizationSuite">
+
+
+    <test name="ParameterizationTest" parallel="methods">
+
+
+        <parameter name="keyWord1" value="testNG" /> <!-- String keyWord1="testNG" -->
+        <parameter name="browser" value="firefox" />
+
+
+
+        <classes>
+            <class name="com.testng.annotations.c_advancedAnnotations.b_Parameterization.ClassicParameterKullanimi" />
+        </classes>
+
+
+
+    </test>
+
+
+</suite>

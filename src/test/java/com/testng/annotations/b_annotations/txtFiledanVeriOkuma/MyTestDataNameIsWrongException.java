@@ -4,6 +4,6 @@ public class MyTestDataNameIsWrongException extends Exception
 {
 
     public MyTestDataNameIsWrongException(String message) {
-        super(message);
+        super(message);//parent'in Exception'nin yaptigi isin aynisini yap
     }
 }

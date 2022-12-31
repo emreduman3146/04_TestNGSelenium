@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="CrossBrowserTesting" thread-count="3" parallel="tests">
+    <!-- @BeforeSuite-->
+
+    <!-- sabit degerler-->
+    <parameter name="URL" value="https://www.chapters.indigo.ca/en-ca/"/><!-- javada class seviyesindeki variable gibi dusunun -->
+    <parameter name="DURATION" value="10"/>
+
+    <!-- test datalar-->
+    <parameter name="homePageTitle" value="Canada's Biggest Bookstore:"/>
+    <parameter name="aratilanKitap" value="The Analyst by John Katzenbach"/>
+    <parameter name="kitapIsmi" value="THE ANALYST: A NOVEL"/>
+
+
+    <test name="Chrome Test"><!-- @BeforeTest-->
+        <parameter name="browser" value="chrome"/><!--bu parameter sadece bu <test>'e ozgudur  javada local variable gibi dusunun-->
+        <classes>
+            <class name="com.testng.annotations.c_advancedAnnotations.b_Parameterization.RealLifeExample"/><!-- @BeforeClass-->
+        </classes>
+    </test>
+
+    <test name="Firefox Test">
+        <parameter name="browser" value="firefox"/><!--bu parameter sadece bu <test>'e ozgudur -->
+        <classes>
+            <class name="com.testng.annotations.c_advancedAnnotations.b_Parameterization.RealLifeExample"/>
+        </classes>
+    </test>
+
+    <test name="Edge Test">
+        <parameter name="browser" value="edge"/><!--bu parameter sadece bu <test>'e ozgudur -->
+        <classes>
+            <class name="com.testng.annotations.c_advancedAnnotations.b_Parameterization.RealLifeExample"/>
+        </classes>
+    </test>
+
+
+</suite>

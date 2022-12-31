@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="crossBrowserTesting" parallel="tests"><!--  bu .xml dosyasi bir testNG test suite doyasidir, test kosacak-->
+
+
+    <!-- BU SUITE'IN ICINDEKI 1. TEST EMRI -->
+    <test name="Chrome Test"><!-- @Test leri kosacaksin-->
+
+        <parameter name="browser" value="chrome"/>
+        <classes><!-- kosacagin teslerin yeri bir/birkac class -->
+            <class name="com.testng.annotations.c_advancedAnnotations.b_Parameterization.ClassicParameterKullanimi" >
+                <methods>
+                    <include name="testMethod2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- BU SUITE'IN ICINDEKI 2. TEST EMRI -->
+    <test name="Firefox Test">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.testng.annotations.c_advancedAnnotations.b_Parameterization.ClassicParameterKullanimi" >
+                <methods>
+                    <include name="testMethod2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- BU SUITE'IN ICINDEKI 3. TEST EMRI -->
+    <test name="Edge Test">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="com.testng.annotations.c_advancedAnnotations.b_Parameterization.ClassicParameterKullanimi" >
+                <methods>
+                    <include name="testMethod2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

@@ -1,19 +1,22 @@
-package com.testng.annotations.b_annotations;
+package com.testng.annotations.b_annotations.txtFiledanVeriOkuma;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.time.Duration;
 
-import static com.testng.annotations.b_annotations.driver.Driver.getDriver;
+import static com.testng.driver.Driver.getDriver;
 import static com.testng.annotations.b_annotations.txtFiledanVeriOkuma.TxtOkuma.getValueFromTxtFile;
 import static com.testng.annotations.b_annotations.txtFiledanVeriOkuma.TxtOkuma.getWebElement;
 
@@ -25,19 +28,29 @@ public class a_Priority_Description_DependsOnMethod_TestdataInTxtFile
         //TEST STEP2 arama motoruna The Analyst by John Katzenbach (kitap ve yazarin adini) gir
         //TEST STEP3 ilk sirada THE ANALYST: A NOVEL kitap ismi olmali
 
-    private static WebDriver driver;
-    SoftAssert sa;
+    static SoftAssert sa;
+    static WebDriverWait wait;
 
 
     @BeforeClass
     void assertionSetup()
     {
+        //WEBDRIVERWAIT YA DA FLUENTWAIT ISE WEBELEMENTE OZGU BEKLEME CESIDI IDI
+        //Exclicitly wait boyle tanimlanir ama kullanmaya gelince birebir kodlariin arasinda kullanilir
+        wait=new WebDriverWait(getDriver(),Duration.ofSeconds(10));
+
+        //WAIT AYARI YAPILIYOR -
+        getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(7000));//BURADA YAZDIGIM AYAR PROJEMIN HER SATIRIN UYGULANIR
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(7000));//Herhabgi bir webelementin yukelnemsini 7 sn. ye kadar bekle
+
         sa = new SoftAssert();
     }
 
 
     @Test( priority =1,
-            description = "Indigo Sitesine Git")
+            description = "Indigo Sitesine Git",
+           timeOut = 5000
+    )
     public void launchChromeBrowser_and_navigateToTheUrl()
     {
         try
@@ -66,6 +79,7 @@ public class a_Priority_Description_DependsOnMethod_TestdataInTxtFile
 
 
     @Test( priority = 2,
+            enabled = false, // false bu method calismaz
             //dependsOnMethods = "launchChromeBrowser_and_navigateToTheUrl",
             description = "Arama motoruna kitap ismi girilip enter'a basiliyor ve ardindan kitap ismi verify ediliyor")
     public void searchForTheBook_inIndigo() {
@@ -74,24 +88,15 @@ public class a_Priority_Description_DependsOnMethod_TestdataInTxtFile
 
             System.out.println("STEP2-searchForTheBook_inIndigo Initialized");
 
-            //WAIT FOR POPUP, IMPLICITLY
-            //JAVA BILGISI STRING->INTEGER CASTING
-            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(getValueFromTxtFile("Constants","DURATION"))));
-
-            //POPUP KAPATILDI
-            //getDriver().findElement(By.xpath("......")).click();
-
             getWebElement("stayInTheKnowPopUpClose_button").click();
 
             //KITABIN ISMINI GIR
-
-            getWebElement("searchBar_textBox").sendKeys(getValueFromTxtFile("TestData","aratilanKitap"));
+            WebElement searchBar=getWebElement("searchBar_textBox");
+            searchBar.sendKeys(getValueFromTxtFile("TestData","aratilanKitap"));
 
             //ENTER TUSUNA BAS - getDriver().sendKeys(Keys.ENTER);
-            Robot robot = new Robot();
-
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
+            Actions actions=new Actions(getDriver());
+            actions.moveToElement(searchBar).doubleClick().sendKeys(Keys.ENTER).build().perform();
 
             //VERIFICATION YAPILIYOR- SOFT ASSERTION
             sa.assertEquals(getWebElement("ilkUrun").getText(),getValueFromTxtFile("TestData","kitapIsmi"),"Kitap ismi eslesmiyor");
@@ -109,5 +114,18 @@ public class a_Priority_Description_DependsOnMethod_TestdataInTxtFile
     {
         sa.assertAll();
     }
+
+
+    /*
+    timeout=3000
+    belirtilen 3000 milisaniye (3 saniye) zaman aşımı süresini aştığı için başarısız olacaktır.
+    Zaman aşımını milisaniye cinsinden @Test anotasyonuna belirtebilirsiniz.
+
+
+
+    Ayrıca, tüm test sınıfı için de bir zaman aşımı belirleyebilirsiniz.
+    Bunu yapmak için, @Test(timeOut = 10000) anotasyonunu spesifik bir test yöntemi yerine sınıfın kendine uygulayın.
+    Bu, belirtilen zaman aşımı süresini aşan tüm test yöntemlerinin başarısızlıkla sonuçlanmasına neden olacaktır.
+     */
 
 }

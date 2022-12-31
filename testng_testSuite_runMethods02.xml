@@ -1,7 +1,7 @@
 <suite name="My Test Suite" verbose="2">
     <test name="My Test Case">
         <classes>
-            <class name="com.testng.annotations.a_basicAnnotations.Test02">
+            <class name="com.testng.annotations.a_basicAnnotations.IkinciTest">
                 <methods>
                     <include name="test01"/>
                     <include name="test03" dependsOnMethods="test01"/>

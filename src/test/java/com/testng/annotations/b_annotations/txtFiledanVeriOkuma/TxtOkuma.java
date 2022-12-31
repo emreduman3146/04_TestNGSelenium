@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static com.testng.annotations.b_annotations.driver.Driver.getDriver;
+import static com.testng.driver.Driver.getDriver;
 
 public class TxtOkuma
 {
@@ -21,6 +21,8 @@ public class TxtOkuma
 
     //TESTDATA VE CONSTANT OKUMAK ICIN
     public static String getValueFromTxtFile(String fileName, String expectedDataName) throws MyTestDataNameIsWrongException, MyConstantsNameIsWrongException {
+
+        //KULLANICININ DOYA ADI VE DATA ADI VEREREK GET YAPMAK ISTEDIGI DEGERLER BULUNAMAMISTIR!!!
         boolean testdataIsmiMevcut =false;
         boolean sabitDegerIsmiMevcut =false;
 
@@ -53,8 +55,11 @@ public class TxtOkuma
 
                 if(expectedDataName.equalsIgnoreCase(dataName))
                 {
-                    testdataIsmiMevcut=true;
-                    sabitDegerIsmiMevcut=true;
+                    if (fileName.equals("TestData"))
+                          testdataIsmiMevcut=true;//TESTDATA ISMI BULUNMUSTUR
+                    if (fileName.equals("Constants"))
+                         sabitDegerIsmiMevcut=true;//CONSTANT ISMI BULUNMUSTUR
+
                     break;//WHILE LOOPTAN CIKILACAK
                 }
 
@@ -63,11 +68,11 @@ public class TxtOkuma
             myReader.close();//ICERISINDE While loop ile gezdigimiz txt file'dan cikis yapildi
 
             //aranan data bulunamadiysa hata firlat
-            if(!testdataIsmiMevcut)
+            if(!testdataIsmiMevcut && fileName.equals("TestData"))
                 throw new MyTestDataNameIsWrongException("Searched data is not found!");
 
             //aranan sabit bulunamadiysa hata firlat
-            if(!sabitDegerIsmiMevcut)
+            if(!sabitDegerIsmiMevcut && fileName.equals("Constants"))
                 throw new MyConstantsNameIsWrongException("Searched constant is not found!");
 
         }
@@ -80,6 +85,13 @@ public class TxtOkuma
         return dataValue;
 
     }
+
+
+
+
+
+
+
 
 
     //WEBELEMENT OKUMAK ICIN

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="TestNG Group Test">
+   
+    <test name="groupTesti" verbose="2">
+
+        <groups><!--@BeforeGroups -->
+
+            <run>
+                <exclude name="group1"></exclude>
+            </run>
+
+        </groups><!--@AfterGroups -->
+
+        <classes>
+            <class name="com.testng.annotations.c_advancedAnnotations.c_Groups.ClassicGroups"></class>
+        </classes>
+    </test>
+</suite>

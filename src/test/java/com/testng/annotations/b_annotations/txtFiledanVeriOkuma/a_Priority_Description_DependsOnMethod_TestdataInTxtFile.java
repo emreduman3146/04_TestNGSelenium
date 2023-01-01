@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -48,8 +49,8 @@ public class a_Priority_Description_DependsOnMethod_TestdataInTxtFile
 
 
     @Test( priority =1,
-            description = "Indigo Sitesine Git",
-           timeOut = 5000
+            description = "Indigo Sitesine Git"
+           //timeOut = 6000
     )
     public void launchChromeBrowser_and_navigateToTheUrl()
     {
@@ -78,8 +79,9 @@ public class a_Priority_Description_DependsOnMethod_TestdataInTxtFile
     }
 
 
+    @Ignore//junit5.9'da da var
     @Test( priority = 2,
-            enabled = false, // false bu method calismaz
+            enabled = true, // false bu method calismaz
             //dependsOnMethods = "launchChromeBrowser_and_navigateToTheUrl",
             description = "Arama motoruna kitap ismi girilip enter'a basiliyor ve ardindan kitap ismi verify ediliyor")
     public void searchForTheBook_inIndigo() {

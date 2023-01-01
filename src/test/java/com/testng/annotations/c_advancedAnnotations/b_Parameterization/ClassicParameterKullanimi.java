@@ -25,7 +25,7 @@ public class ClassicParameterKullanimi
 
 
 
-    @Test(priority = 1)
+    @Test(priority = 1 ,enabled = false)
     @Parameters({"browser"})
     public void testMethod2(String param)
     {

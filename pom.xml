@@ -54,8 +54,6 @@
             BIR EXCEL DOSYASINI GUZELCE OKUMAK-YAZMAK ICIN BIZE HAZIR CLASSES/METHODS VERIR
             VERSIYONLARI AYNI OLMALIDIR
         -->
-
-
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -67,6 +65,15 @@
             <artifactId>poi-ooxml</artifactId>
             <version>5.2.2</version>
         </dependency>
+
+
+        <!--LOGLAMA YAPABILMEK ICIN GEREKLI DEPENDENCY -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
 
 
 

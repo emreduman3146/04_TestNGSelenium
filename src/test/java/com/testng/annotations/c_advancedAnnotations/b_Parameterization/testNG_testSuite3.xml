@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="parallelCrossBrowserTesting" thread-count="2" parallel="tests"><!--eleimizdeki <test> adedince arkada thread olusur her thread bir <test>'i kosar  -->
+<suite name="parallelCrossBrowserTesting" thread-count="3" parallel="tests"><!--eleimizdeki <test> adedince arkada thread olusur her thread bir <test>'i kosar  -->
 <!-- ayni anda enfazla 2 tane thread calisabilir, cpu ayni anda sadece 2 tane threadin emrini okur-->
 
     <test name="Chrome Test">

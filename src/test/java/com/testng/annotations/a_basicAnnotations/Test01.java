@@ -14,7 +14,6 @@ public class Test01
         System.out.println("Test Suite calistiriliyor");
     }
 
-
     @BeforeTest
     public static void BeforeTest()
     {
@@ -27,6 +26,7 @@ public class Test01
         System.out.println("BeforeClass");
     }
 
+    //@BeforeGroups
 
     @BeforeMethod//BeforeEach
     public static void BeforeMethod()

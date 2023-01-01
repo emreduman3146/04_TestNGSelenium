@@ -1,0 +1,22 @@
+Log4j mimarisinin özeti:
+    Log4j'nin önemli üç ana bileşeni vardır ve bunlar;
+       1-Logger,
+       2-Layout
+       3-Appenders,  Classlaridir
+
+       Bu üç bileşen birlikte, developer/QA'lere belirtilen biçimde ve
+       belirtilen hedefe log mesajları yazmayı sağlar.
+
+
+1-Logger Nesnesi - QA'den string cumle alir
+    Logger nesnenin ana sorumluluğu, günlüğe alınması gereken tüm bilgileri saklamaktır.
+
+2-Layout Nesnesi - sayfanin tasarimini yapar
+    Layout-bicim duzen, Nesnesi, günlük bilgilerini istenen biçime düzenleme / tarz verme sorumluluğu taşır.
+
+3-Appender Nesnesi - birlestir ve yaz
+    Appender Nesnesi, stilize edilmiş günlük bilgilerini dosya sistemi, konsol, veritabanı,
+    JMS gibi belirtilen hedefe gönderir. Günlükleri hedeflere asenkron olarak gönderebiliriz.
+
+
+

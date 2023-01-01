@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="CrossBrowserTesting" thread-count="3" parallel="tests">
+    <!-- @BeforeSuite-->
+
+    <!-- sabit degerler-->
+    <parameter name="URL" value="https://www.trendyol.com/"/><!-- javada class seviyesindeki variable gibi dusunun -->
+    <parameter name="DURATION" value="20"/>
+
+    <!-- test datalar-->
+    <parameter name="country" value="Turkey"/>
+    <parameter name="expectedTitle" value="En Trend Ürünler Türkiye'nin Online Alışveriş Sitesi Trendyol'da"/>
+
+
+    <test name="Chrome Test"><!-- @BeforeTest-->
+        <parameter name="browser" value="firefox"/><!--bu parameter sadece bu <test>'e ozgudur  javada local variable gibi dusunun-->
+        <classes>
+            <class name="com.testng.testbase_loglama_propertiesReadWrite_takeSS.a_testbase.Trendyol_UI_Automation"/><!-- @BeforeClass-->
+        </classes>
+    </test>
+
+
+</suite>

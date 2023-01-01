@@ -1,0 +1,6 @@
+INFO 2023-01-01 11:34:24,225 logger.Logger main info 
+FATAL 2023-01-01 11:34:24,236 logger.Logger main fatal 
+INFO 2023-01-01 11:34:40,551 logger.Logger main info 
+FATAL 2023-01-01 11:34:40,563 logger.Logger main fatal 
+INFO 2023-01-01 11:34:59,383 logger.Logger main info 
+FATAL 2023-01-01 11:34:59,391 logger.Logger main fatal 

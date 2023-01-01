@@ -1,0 +1,32 @@
+1-Loglama işlemi,
+
+    uygulamanın çalışma sırasında gerçekleştirdiği işlemleri takip etmek ve
+    hata ayıklama yapmak için kullanılan bir yöntemdir.
+
+        Örneğin, bir uygulama çalışırken bir noktada hata oluştuğunda,
+        bu hatanın neden oluştuğunu anlamaya yardımcı olmak için hata mesajlarını
+        günlüğe kaydetme işlemidir.
+
+        QA ICIN->
+        Bu, ileride oluşabilecek benzer hataları önceden öngörebilmek ve
+        önleyebilmek için de kullanışlı olabilir.
+
+        BA ICIN->
+        Non-technical people'a bizim yazdigimiz java-selenium algorithmasinin anlamasini saglariz
+
+
+
+2-Loglama işlemi için
+
+    genellikle bir logging framework kullanılır.
+
+        Örneğin, Java dili için log4j ve logback gibi popüler logging framework'leri vardır.
+        Bu framework'ler, developer/QA'lere log mesajlarını belirli biçimlerde yazma ve hedeflere
+        (örneğin dosya sistemine, konsola veya veritabanına) gönderme gibi işlemleri kolaylaştıran bir API sağlar.
+
+
+3-Loglama işlemi için kod yazarken,
+
+    öncelikle ilgili logging framework'ünü projeye dahil etmeniz gerekir.
+    Daha sonra, logging işlemini yapmak istediğiniz yerlerde Logger nesnesi oluşturarak
+    log mesajlarını yazabilirsiniz.-bu en ilkel kullanim

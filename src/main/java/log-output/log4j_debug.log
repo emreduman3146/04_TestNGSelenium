@@ -1,2 +1,9 @@
-2023-01-01 11:34:59 INFO  Logger:32 - info
-2023-01-01 11:34:59 FATAL Logger:34 - fatal
+2023-01-05 23:28:27 INFO  Logger:42 - ---------------------------------------------------------------------------------------
+2023-01-05 23:28:27 INFO  Logger:43 - ***********************        STEP1 STARTED    **************************
+2023-01-05 23:28:27 INFO  Logger:44 - ---------------------------------------------------------------------------------------
+2023-01-05 23:28:36 INFO  Logger:58 - Country-> Turkey selected and Navigated tohttps://www.trendyol.com/ successfully
+2023-01-05 23:28:36 INFO  Logger:58 - actualPageTitle = En Trend Ürünler Türkiye'nin Online Alışveriş Sitesi Trendyol'da
+2023-01-05 23:28:36 INFO  Logger:58 - expectedTitle = En Trend Ürünler Türkiye'nin Online Alışveriş Sitesi Trendyol'da
+2023-01-05 23:28:37 INFO  Logger:51 - ---------------------------------------------------------------------------------------
+2023-01-05 23:28:37 INFO  Logger:52 - **************************     STEP1 ENDED       **************************
+2023-01-05 23:28:37 INFO  Logger:53 - ---------------------------------------------------------------------------------------

@@ -1,6 +1,5 @@
 package com.testng.driver;
 
-import com.testng.annotations.b_annotations.txtFiledanVeriOkuma.MyTestDataNameIsWrongException;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

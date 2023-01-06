@@ -1,30 +1,26 @@
 package com.testng.testbase_loglama_propertiesReadWrite_takeSS.b_testbase_loglama;
 
 //DRIVER OLUSUMU ICIN
-import static com.testng.testbase_loglama_propertiesReadWrite_takeSS.driver.DriverClass.getDriver;
+import static com.testng.testbase_loglama_propertiesReadWrite_takeSS.z_driver.DriverClass.getDriver;
 
 //@BEFORECLASS @AFTERCLASS YONETIMI ICIN
-import com.testng.testbase_loglama_propertiesReadWrite_takeSS.b_testbase_loglama.testbase_paramsFromTestSuite.TestNG_TestBase_ForMultipleBrowsers;
+import com.testng.testbase_loglama_propertiesReadWrite_takeSS.b_testbase_loglama.testbase_paramsFromTestSuite.TestNG_TestBase_ForMultipleBrowsers02;
 
 //SELENIUM CLASSES/METHODS ICIN
 import logger.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 //TESTNG ANNOTATIONS+METHODS ICIN
 import org.testng.Assert;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
-public class Trendyol_UI_Automation extends TestNG_TestBase_ForMultipleBrowsers
+public class Trendyol_UI_Automation extends TestNG_TestBase_ForMultipleBrowsers02
 {
 
 
@@ -165,6 +161,7 @@ public class Trendyol_UI_Automation extends TestNG_TestBase_ForMultipleBrowsers
         catch (Exception exception)
         {
             Logger.error("Test is failed due to -> "+exception.getMessage());
+            Assert.fail();
         }
 
 

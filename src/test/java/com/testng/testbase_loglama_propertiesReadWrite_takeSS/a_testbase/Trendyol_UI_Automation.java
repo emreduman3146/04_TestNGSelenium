@@ -1,14 +1,13 @@
 package com.testng.testbase_loglama_propertiesReadWrite_takeSS.a_testbase;
 
 //DRIVER OLUSUMU ICIN
-import static com.testng.testbase_loglama_propertiesReadWrite_takeSS.driver.DriverClass.getDriver;
+import static com.testng.testbase_loglama_propertiesReadWrite_takeSS.z_driver.DriverClass.getDriver;
 
 //@BEFORECLASS @AFTERCLASS YONETIMI ICIN
 import com.testng.testbase_loglama_propertiesReadWrite_takeSS.a_testbase.testbase_paramsFromTestSuite.TestNG_TestBase_ForMultipleBrowsers01;
 
 //SELENIUM CLASSES/METHODS ICIN
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 

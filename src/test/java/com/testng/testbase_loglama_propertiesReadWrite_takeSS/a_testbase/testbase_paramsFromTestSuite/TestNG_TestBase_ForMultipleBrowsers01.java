@@ -1,6 +1,6 @@
 package com.testng.testbase_loglama_propertiesReadWrite_takeSS.a_testbase.testbase_paramsFromTestSuite;
 
-import com.testng.testbase_loglama_propertiesReadWrite_takeSS.driver.DriverClass;
+import com.testng.testbase_loglama_propertiesReadWrite_takeSS.z_driver.DriverClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;

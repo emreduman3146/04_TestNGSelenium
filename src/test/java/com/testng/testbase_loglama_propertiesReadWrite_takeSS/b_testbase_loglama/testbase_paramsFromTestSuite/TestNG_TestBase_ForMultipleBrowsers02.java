@@ -1,20 +1,18 @@
 package com.testng.testbase_loglama_propertiesReadWrite_takeSS.b_testbase_loglama.testbase_paramsFromTestSuite;
 
-import com.testng.testbase_loglama_propertiesReadWrite_takeSS.b_testbase_loglama.Trendyol_UI_Automation;
-import com.testng.testbase_loglama_propertiesReadWrite_takeSS.driver.DriverClass;
+import com.testng.testbase_loglama_propertiesReadWrite_takeSS.z_driver.DriverClass;
 import logger.Logger;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
-import static com.testng.testbase_loglama_propertiesReadWrite_takeSS.driver.DriverClass.getDriver;
+import static com.testng.testbase_loglama_propertiesReadWrite_takeSS.z_driver.DriverClass.getDriver;
 
 
-public class TestNG_TestBase_ForMultipleBrowsers
+public class TestNG_TestBase_ForMultipleBrowsers02
 {
     // @Optional --> Parametreyi xml dosyasından her zaman sağlamak istemediğimizden, @Optional kullaniyoruz
     // @Parameters -> browser türünü xml dosyasından nasıl alabiliriz ???

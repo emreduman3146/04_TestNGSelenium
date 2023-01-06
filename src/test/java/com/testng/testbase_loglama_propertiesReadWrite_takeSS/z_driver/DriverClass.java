@@ -1,4 +1,4 @@
-package com.testng.testbase_loglama_propertiesReadWrite_takeSS.driver;
+package com.testng.testbase_loglama_propertiesReadWrite_takeSS.z_driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -58,7 +58,7 @@ public class DriverClass {
     }
 
 
-   public static WebDriver getDriverByDefault()
+   public static WebDriver getDriverByDefaultBrowser()
     {
         return getDriver(null);
     }

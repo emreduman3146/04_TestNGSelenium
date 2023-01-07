@@ -143,13 +143,14 @@
 
 
 
-                    <!--
+
 
                     <suiteXmlFiles>
                         <suiteXmlFile>testng_testSuite_runClasses.xml</suiteXmlFile>
+                        <suiteXmlFile>testng_testSuite_runClasses2.xml</suiteXmlFile>
                     </suiteXmlFiles>
 
-                    -->
+
 
 
                 </configuration>

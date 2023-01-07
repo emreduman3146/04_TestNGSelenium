@@ -1,0 +1,20 @@
+Java programı Intellij IDE(Integrated Development Environment) çalıştırıldığında,
+    Java Virtual Machine (JVM) tarafından yönetilen host(bizim bilgisayarimiz) makine'nin merkezi işlem birimi (CPU)
+    Java bytecode'unu yorumlar ve çalıştırır.
+    Java bytecode, programın JVM tarafından anlaşılabilir bir şekilde temsil edilmiş hali olur.
+
+JVM, bytecode'u okur ve host makine'nin CPU'su tarafından yürütülebilecek komutlara çevirir.
+    Bu işleme yorumlama/interpretation denir.
+    JVM, bytecode'u yorumlar ve program çalışırken anında komutları üretir.
+    Bu, C ve C++ gibi dillerden farklı olarak, makine koduna derlenen dil olmaz.
+    Makine kodu, host makine mimarisine özel olur ve CPU tarafından doğrudan yürütülebilir.
+
+Java programı çalışırken,
+    host makine'nin CPU'su, JVM tarafından üretilen komutları çalıştırır.
+    JVM, bytecode'u yorumlar ve CPU'ya çalıştırılacak komutları üretir ve
+    Java derleyici/compiler, kaynak kodunu/source code JVM/java sanal makinesi tarafından anlaşılabilir olan
+    bytecode'a çeviren yazılımdır.
+
+
+Yukaridaki ozeti okuduktan sonra bu kaynagi lutfen genel kultur icin okuyup anlayiniz
+    ->https://koraypeker.com/2018/04/05/jdk-jre-ve-jvm-denklemi/

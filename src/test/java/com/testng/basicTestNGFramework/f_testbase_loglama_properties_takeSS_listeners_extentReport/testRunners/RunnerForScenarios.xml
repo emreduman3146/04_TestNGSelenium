@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TrendyolUITesting_TestSuite" thread-count="3" parallel="tests">
+    <!-- @BeforeSuite-->
+
+    <!-- sabit degerler-->
+    <parameter name="URL" value="https://www.trendyol.com/"/><!-- javada class seviyesindeki variable gibi dusunun -->
+    <parameter name="sepetURL" value="https://www.trendyol.com/sepet"/>
+    <parameter name="DURATION" value="10"/>
+
+    <!-- test datalar-->
+    <parameter name="country" value="Turkey"/>
+    <parameter name="expectedTitle" value="En Trend Ürünler Türkiye'nin Online Alışveriş Sitesi Trendyol'da"/>
+    <parameter name="email" value="tdemailtestdata@gmail.com"/>
+    <parameter name="password" value="Trendyol123!"/>
+
+    <!-- Burada listener olarak eklenen classlar test suite'teki tum testler icin ortaktir-->
+    <listeners>
+        <listener class-name="com.testng.basicTestNGFramework.f_testbase_loglama_properties_takeSS_listeners_extentReport.listeners.MySuiteListener"/>
+        <listener class-name="com.testng.basicTestNGFramework.f_testbase_loglama_properties_takeSS_listeners_extentReport.listeners.MyITestListener"/>
+        <listener class-name="com.testng.basicTestNGFramework.f_testbase_loglama_properties_takeSS_listeners_extentReport.listeners.MyIExecutionListener"/>
+    </listeners>
+
+    <test name="Login_Logout_Scenario_Testcase1"><!-- @BeforeTest-->
+        <parameter name="browser" value="chrome"/><!--bu parameter sadece bu <test>'e ozgudur  javada local variable gibi dusunun-->
+        <classes>
+            <class name="com.testng.basicTestNGFramework.f_testbase_loglama_properties_takeSS_listeners_extentReport.TestScenarios.TrendyolUser_Login_Logout"/><!-- @BeforeClass-->
+        </classes>
+    </test>
+
+
+</suite>

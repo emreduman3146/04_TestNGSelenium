@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SuiteOne">
+
+    <!-- @Listeners(MyListener.class) ILE AYNI ISLEVI GORUR-->
+    <listeners>
+        <listener class-name="com.testng.annotations.c_advancedAnnotations.d_listeners.ISuiteListener.MyListener"/>
+    </listeners>
+
+    <test  name="Test01">
+        <classes>
+            <class name="com.testng.annotations.c_advancedAnnotations.d_listeners.ISuiteListener.ISuiteListenerWithExample"/>
+        </classes>
+    </test> <!-- Test -->
+
+
+</suite> <!-- Suite -->
+
+
+

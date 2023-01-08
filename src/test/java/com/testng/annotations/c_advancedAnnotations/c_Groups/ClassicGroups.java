@@ -17,7 +17,6 @@ public class ClassicGroups
         System.out.println("BEFORE GROUPS group1 icin calis");
     }
 
-
     @Test(groups = { "group1", "group2" })
     public void test_method1()
     {

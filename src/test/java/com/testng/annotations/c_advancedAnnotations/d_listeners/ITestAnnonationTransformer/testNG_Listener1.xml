@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="IAnnotationTransformer" >
+
+    <!-- Burada listener olarak eklenen classlar test suite'teki tum testler icin ortaktir-->
+    <listeners>
+        <listener class-name="com.testng.annotations.c_advancedAnnotations.d_listeners.ITestAnnonationTransformer.MyListener"/>
+    </listeners>
+
+    <test name="SetInvocation"><!-- @BeforeTest-->
+        <classes>
+            <class name="com.testng.annotations.c_advancedAnnotations.d_listeners.ITestAnnonationTransformer.IAnnotationTransformerWithExample"/><!-- @BeforeClass-->
+        </classes>
+    </test>
+
+
+</suite>

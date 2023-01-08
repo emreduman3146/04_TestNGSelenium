@@ -99,6 +99,15 @@
         </dependency>
 
 
+        <!--TESTNG EXTENT REPORT 5 URETMEK ICIN -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.0.9</version>
+        </dependency>
+
+
+
     </dependencies>
 
 
@@ -147,7 +156,6 @@
 
                     <suiteXmlFiles>
                         <suiteXmlFile>testng_testSuite_runClasses.xml</suiteXmlFile>
-                        <suiteXmlFile>testng_testSuite_runClasses2.xml</suiteXmlFile>
                     </suiteXmlFiles>
 
 

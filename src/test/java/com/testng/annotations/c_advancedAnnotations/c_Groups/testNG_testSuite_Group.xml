@@ -9,13 +9,13 @@
         <groups><!--@BeforeGroups -->
 
             <run>
-                <exclude name="group1"></exclude>
+                <exclude name="group1"/>
             </run>
 
         </groups><!--@AfterGroups -->
 
         <classes>
-            <class name="com.testng.annotations.c_advancedAnnotations.c_Groups.ClassicGroups"></class>
+            <class name="com.testng.annotations.c_advancedAnnotations.c_Groups.ClassicGroups"/>
         </classes>
     </test>
 </suite>

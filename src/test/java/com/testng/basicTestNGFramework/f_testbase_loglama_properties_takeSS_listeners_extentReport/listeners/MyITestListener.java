@@ -1,6 +1,7 @@
 package com.testng.basicTestNGFramework.f_testbase_loglama_properties_takeSS_listeners_extentReport.listeners;
 
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.testng.basicTestNGFramework.f_testbase_loglama_properties_takeSS_listeners_extentReport.utilities.Constants;
 import logger.Logger;
@@ -77,6 +78,7 @@ public class MyITestListener implements ITestListener {
 
         test.log(Status.FAIL,result.getName());
         test.warning(logMessage);
+        test.fail(MediaEntityBuilder.createScreenCaptureFromPath(ssPath).build());//image gozukmuyor!!!
 
 
 

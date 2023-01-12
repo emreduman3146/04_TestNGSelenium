@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="TrendyolUITesting_TestSuite" thread-count="3" parallel="tests">
+<suite name="TrendyolUITesting_TestSuite">
     <!-- @BeforeSuite-->
 
     <!-- sabit degerler-->
@@ -22,12 +22,11 @@
         <listener class-name="com.testng.basicTestNGFramework.f_testbase_loglama_properties_takeSS_listeners_extentReport.listeners.MyIExecutionListener"/>
     </listeners>
 
-    <test name="Login_Logout_Scenario_Testcase1"><!-- @BeforeTest-->
+    <test name="Chrome Test"><!-- @BeforeTest-->
         <parameter name="browser" value="chrome"/><!--bu parameter sadece bu <test>'e ozgudur  javada local variable gibi dusunun-->
         <classes>
-            <class name="com.testng.basicTestNGFramework.f_testbase_loglama_properties_takeSS_listeners_extentReport.TestScenarios.TrendyolUser_Login_Logout"/><!-- @BeforeClass-->
+            <class name="com.testng.basicTestNGFramework.f_testbase_loglama_properties_takeSS_listeners_extentReport.TestScenarios.TrendyolUser_Login_Logout"/>
         </classes>
     </test>
-
 
 </suite>

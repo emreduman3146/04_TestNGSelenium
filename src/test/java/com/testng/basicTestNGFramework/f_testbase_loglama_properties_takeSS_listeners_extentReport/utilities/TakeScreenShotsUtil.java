@@ -29,6 +29,7 @@ public class TakeScreenShotsUtil
 
         String aciklama = "Step" + stepNumber + "_" + date + "_" + fileName;
         String target = defaultPath + aciklama + ".png";
+        File finalDestination = new File(target);
 
         try
         {
@@ -45,7 +46,7 @@ public class TakeScreenShotsUtil
             }
             if (fullScreen) {
                 Screenshot s = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(getDriver());
-                ImageIO.write(s.getImage(), "PNG", new File(target));
+                ImageIO.write(s.getImage(), "PNG", finalDestination);
             }
             else {
 
@@ -56,7 +57,6 @@ public class TakeScreenShotsUtil
                 ekranGoruntusu_aciklamasi.put(source, aciklama);//JAVADA MAPLER KONUSU
 
                 //test-output/screenshots directory'sine kaydeder
-                File finalDestination = new File(target);
                 FileOutputStream fileOutputStream = new FileOutputStream(finalDestination);
                 fileOutputStream.write(source);
 
@@ -71,6 +71,7 @@ public class TakeScreenShotsUtil
             System.out.println(exception);
         }
 
-        return target;// just incase , ama kullanmiyoruz
+
+        return target;
     }
 }

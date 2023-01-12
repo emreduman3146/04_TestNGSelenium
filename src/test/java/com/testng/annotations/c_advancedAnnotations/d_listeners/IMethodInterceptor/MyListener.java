@@ -37,6 +37,8 @@ public class MyListener implements IMethodInterceptor {
     IMethodInterceptor: Bu listener, TestNG tarafından çalıştırılması gereken methodları değiştirmeye yardımcı olur.
     TestNG methodları çağırmadan hemen önce çağrılır.
     Sadece intercept adinda bir methodu vardir var ve değiştirilmiş method listesi döndürür.
+
+
     Örneği inceleyelim. Buradaki kod, sadece test sınıfındaki öncelik 1 olan methodları çalıştıracaktır.
     Diğer farklı öncelikleri olan methodlar çalıştırılmayacaktır.
     Bu, IMethodInterceptor listener'ını implemente etikten sonra yapılacaktır.

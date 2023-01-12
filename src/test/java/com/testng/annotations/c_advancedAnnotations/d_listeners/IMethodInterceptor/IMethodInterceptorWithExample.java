@@ -11,7 +11,7 @@ public class IMethodInterceptorWithExample {
         System.out.println("Method 1 will not be executed");
     }
 
-    @Test(priority=2)
+    @Test(priority=3)
     public void method2() {
         System.out.println("Method 2 will not be executed");
     }
@@ -21,7 +21,7 @@ public class IMethodInterceptorWithExample {
         System.out.println("Method 3 will be executed");
     }
 
-    @Test(priority=1, description = "Uygulamadan cikis yapilir")
+    @Test(priority=1, description = "Uygulamadan cikis yapilirrrrrrrrrrrrrrrrrrrrrrr")
     public void method4() {
         System.out.println("Method 4 will be executed");
     }

@@ -7,27 +7,27 @@ import org.testng.annotations.*;
 public class IInvokedMethodListenerWithExample {
 
     @BeforeSuite
-    public void method1() {
+    public void beforeSuite() {
         System.out.println("before suite");
     }
 
     @BeforeMethod
-    public void method2() {
+    public void beforeMethod() {
         System.out.println("before method");
     }
 
     @Test
-    public void method3() {
+    public void method1() {
         System.out.println("test method 1 ");
     }
 
     @Test
-    public void method4() {
+    public void method2() {
         System.out.println("test method 2 ");
     }
 
     @AfterMethod
-    public void method5() {
+    public void afterMethod() {
         System.out.println("after method");
     }
 

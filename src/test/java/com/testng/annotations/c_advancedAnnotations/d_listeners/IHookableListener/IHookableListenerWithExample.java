@@ -8,14 +8,19 @@ import org.testng.annotations.Test;
 public class IHookableListenerWithExample {
 
     @DataProvider
-    public Object[][] testDataTeminEdiciMethod() {
+    public Object[][] testDataTeminEdiciMethod()
+    {
         return new Object[][]
-            {
-                {"dataProvider-testData 1"},
-                {"dataProvider-testData 2"},
-                {"dataProvider-testData 3"}
-            };
+        {
+            {"dataProvider-testData 1"},
+            {"dataProvider-testData 2"},
+            {"dataProvider-testData 3"}
+        };
     }
+
+
+
+
 
     @Test(dataProvider="testDataTeminEdiciMethod")
     public void t(String parameter)

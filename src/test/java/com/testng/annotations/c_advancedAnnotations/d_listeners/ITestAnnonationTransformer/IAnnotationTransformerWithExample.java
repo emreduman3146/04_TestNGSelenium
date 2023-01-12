@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 public class IAnnotationTransformerWithExample
 {
 
-    MyListener obj=new MyListener();
 
     @Test(invocationCount=5)// --> JUNIT5.9 DAKI @RepeatedTest(5) kullanimina esittir
     public void changeInvocationCountOfMethod()

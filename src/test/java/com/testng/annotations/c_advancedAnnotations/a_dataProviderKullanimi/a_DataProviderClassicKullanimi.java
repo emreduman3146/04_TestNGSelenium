@@ -34,6 +34,7 @@ public class a_DataProviderClassicKullanimi
     }
 
 
+
     @Test(dataProvider = "benDataTeminEdenBirMethodum")
     public void testMethod(int sayi1, int sayi2, int toplam) {
         Assert.assertEquals(sayi1+sayi2,toplam);

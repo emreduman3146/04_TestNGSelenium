@@ -7,9 +7,15 @@
         <listener class-name="com.testng.annotations.c_advancedAnnotations.d_listeners.IReporter.MyListener"/>
     </listeners>
 
-    <test name="IReport">
+    <test name="IReport1">
         <classes>
             <class name="com.testng.annotations.c_advancedAnnotations.d_listeners.IReporter.IReporterWithExample"/><!-- @BeforeClass-->
+        </classes>
+    </test>
+
+    <test name="IReport2">
+        <classes>
+            <class name="com.testng.annotations.c_advancedAnnotations.d_listeners.IReporter.IReporterWithExample2"/><!-- @BeforeClass-->
         </classes>
     </test>
 

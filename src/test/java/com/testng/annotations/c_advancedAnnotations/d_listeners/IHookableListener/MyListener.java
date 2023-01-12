@@ -2,7 +2,6 @@ package com.testng.annotations.c_advancedAnnotations.d_listeners.IHookableListen
 
 import org.testng.IHookCallBack;
 import org.testng.IHookable;
-import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 public class MyListener implements IHookable
@@ -13,7 +12,7 @@ public class MyListener implements IHookable
 
         Object[] parameterValues = callBack.getParameters();
 
-        if (parameterValues[0].equals("parameter 3"))
+        if (parameterValues[0].equals("dataProvider-testData 3"))
         {
             callBack.runTestMethod(testResult);
 
@@ -30,10 +29,12 @@ public class MyListener implements IHookable
 /*
     IHookable: Bir class bu interface'i implemente ettiğinde,
     test methodları yerine onun run methodu çağrılacaktır.
-    IHookCallBack parametresinin callback methodu kullanılarak,
+    IHookCallBack parametresinin callback parametresi kullanılarak,
     test methodunun çağrılması gerçekleştirilebilir.
+
     Tek bir methodu vardır, run, iki parametre alır.run(IHookCallBack callBack, ITestResult testResult)
     Şimdi gerçek zamanlı bir örneğine bakalım.
+
     Bu örnekte, belirli bir parametre değerine göre, IHookable listener interface'i kullanılarak test atlanacaktır.
     Bu değerler, ayrı bir TestNG sınıfında bir data provider tarafından sağlanacaktır.
  */

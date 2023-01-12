@@ -27,14 +27,7 @@ public class MyListener implements IReporter {
         ISuiteResult suiteResult = suiteResults.iterator().next();
         ITestContext testContext = suiteResult.getTestContext();
         Collection<ITestNGMethod> perfMethods = methodsByGroup.get("smokeTest");
-        IResultMap failedTests = testContext.getFailedTests();
 
-        for (ITestNGMethod perfMethod : perfMethods) {
-            Set<ITestResult> testResultSet = failedTests.getResults(perfMethod);
-            for (ITestResult testResult : testResultSet) {
-                System.out.println("Test " + testResult.getName() + " failed, error " + testResult.getThrowable());
-            }
-        }
 
         IResultMap passedTests = testContext.getPassedTests();
 
@@ -44,6 +37,17 @@ public class MyListener implements IReporter {
             for (ITestResult testResult : testResultSet) {
                 System.out.println("Test " + testResult.getName() + " passed, time took " +
                         (testResult.getEndMillis() - testResult.getStartMillis()));
+            }
+        }
+
+
+
+        IResultMap failedTests = testContext.getFailedTests();
+
+        for (ITestNGMethod perfMethod : perfMethods) {
+            Set<ITestResult> testResultSet = failedTests.getResults(perfMethod);
+            for (ITestResult testResult : testResultSet) {
+                System.out.println("Test " + testResult.getName() + " failed, error " + testResult.getThrowable());
             }
         }
 
